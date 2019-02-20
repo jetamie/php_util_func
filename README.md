@@ -1,5 +1,5 @@
 # php_util_func
-php常用函数方法积累
+个人日常工作学习中的php常用函数方法积累，欢迎大家补充。php交流Q群：294088839
 ## 方法说明
 ### deep_diff_array($arr1, $arr2)
 * 功能：二维数组diff
