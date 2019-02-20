@@ -41,7 +41,7 @@
 * 功能：保持长连接post
 * 说明：$url为链接，$param为key-value数组
 
-### et_ini_config($filename)
+### get_ini_config($filename)
 * 功能：读取配置文件，以数组形式输出
 
 ### get_file_list($path, $type='all')
