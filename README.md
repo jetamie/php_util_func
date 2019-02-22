@@ -47,3 +47,12 @@
 ### get_file_list($path, $type='all')
 * 功能：获取目录下文件列表
 * 说明：$type=all/linux,all所有系统可用
+
+# simple_socket
+简单实现TCP服务端和客户端，仅供参考
+
+### class Server{}
+* 功能：启动服务端
+
+### class Client{}
+* 功能：启动客户端
