@@ -3,7 +3,7 @@
 /**
  * 工具包
  * Create by <米唐>jetamiett@163.com
- * FileName:mt.util.php
+ * FileName:mt_util_func.php
  * Date:2019/2/18
  */
 class Mt_Util

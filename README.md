@@ -1,4 +1,4 @@
-# php_util_func
+# mt_util_func.php
 个人日常工作学习中的php常用函数方法积累，欢迎大家补充。php交流Q群：294088839
 ## 方法说明
 ### deep_diff_array($arr1, $arr2)
