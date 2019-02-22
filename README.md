@@ -50,6 +50,7 @@
 
 # simple_socket
 简单实现TCP服务端和客户端，仅供参考
+## 类说明
 
 ### class Server{}
 * 功能：启动服务端
