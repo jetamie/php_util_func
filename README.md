@@ -7,6 +7,11 @@
 * 举例：$arr1=['a'=>1,'b'=>2];$arr2=['c'=>2,'d'=>4];
 * 输出：['a'=>1];
 
+### dataSortByMoreField()
+* 功能：二维数组多字段排序
+* 说明：可以根据字段不同维度给数组排序
+* 举例：dataSortByMoreField($arr,'k1',SORT_DESC,'k2','SORT_ASC')
+
 ### create_dir($dir)
 * 功能：递归创建文件夹
 * 说明：此方法跟命令 mkdir -p $dir效果相同，在上级目录不存在时自动创建上级目录
