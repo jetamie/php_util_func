@@ -84,8 +84,6 @@ class Client implements socket
 		}
 		
 		$message = 'socket';
-		//转码
-		//$message = mb_convert_encoding($message,'GBK','UTF-8');
 		//向服务端写入字符串信息
 		$write = socket_write($socket,$message,strlen($message));
 		if (!$write) {
