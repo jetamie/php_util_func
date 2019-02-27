@@ -65,6 +65,7 @@ class Client implements socket
 	protected $ip;
 	protected $port;
 	protected $stop = false;
+	public $onMessage = null;
 	public function init($ip, $port)
 	{
 		$this->ip = $ip;
@@ -81,6 +82,7 @@ class Client implements socket
 		if(!$connect){
 			exit(socket_strerror(socket_last_error()));
 		}
+		
 		$message = 'socket';
 		//转码
 		//$message = mb_convert_encoding($message,'GBK','UTF-8');

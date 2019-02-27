@@ -26,6 +26,34 @@ class Mt_Util
         }
     }
 	/**
+     * 功能：二维数组多字段排序
+	 * 说明：可以根据字段不同维度给数组排序
+     * 举例：dataSortByMoreField($arr,'k1',SORT_DESC,'k2','SORT_ASC')
+     */
+    public static function dataSortByMoreField()
+    {
+        $param = func_get_args();
+        if (empty($param)) {
+            return false;
+        }
+        $data = array_shift($param);
+        if (!is_array($data)) {
+            return false;
+        }
+        foreach ($param as $key=>$field) {
+            if (is_string($field)) {
+                $tmp = [];
+                foreach ($data as $idx=>$row) {
+                    $tmp[$idx] = $row[$field];
+                }
+                $param[$key] = $tmp;
+            }
+        }
+        $param[] = &$data;
+        @call_user_func_array('array_multisort', $param);
+        return array_pop($param);
+    }
+	/**
 	 * 功能：递归创建文件夹
 	 * 说明：此方法跟命令 mkdir -p $dir效果相同，
 	 *		 在上级目录不存在时自动创建上级目录
