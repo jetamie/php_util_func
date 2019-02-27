@@ -57,8 +57,12 @@
 简单实现TCP服务端和客户端，仅供参考
 ## 类说明
 
-### class Server{}
+### server.php
 * 功能：启动服务端
 
-### class Client{}
+### client.php
 * 功能：启动客户端
+
+### socket.php
+* 功能：工厂封装基类
+* 说明：使用方法Factory::getInstance('client')，获取客户端实例，服务端同
