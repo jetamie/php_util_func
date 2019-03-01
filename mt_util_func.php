@@ -317,4 +317,31 @@ class Mt_Util
 		}
         return $dir;
     }
+	/**
+	 * 功能：多进程回调执行函数
+	 * 说明：$p是进程数，$func 传入的回调函数；
+	 */
+	public static function mutil_process($p = 4, $func = function(){})
+	{
+		if (gettype($func) !== "object") {
+			die("it's not a function!");
+		}
+		//默认创建4个进程
+		for ($i=0;$i<$p;$i++) {
+			$pid = pcntl_fork();
+			if ($pid == -1) {
+				die("could not fork");
+			} elseif ($pid) {
+				pcntl_waitpid($pid, $status);
+			} else {
+				//需要执行的任务
+				call_user_func($func);
+				exit(0);
+			}
+		}
+		unset($pid);
+		$pid = NULL;
+		unset($p);
+		$p = NULL;
+	}
 }

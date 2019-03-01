@@ -53,6 +53,10 @@
 * 功能：获取目录下文件列表
 * 说明：$type=all/linux,all所有系统可用
 
+### mutil_process($p = 4, $func = function(){})
+* 功能：多进程回调执行函数
+* 说明：$p是进程数，$func 传入的回调函数；
+
 # simple_socket
 简单实现TCP服务端和客户端，仅供参考
 ## 类说明
