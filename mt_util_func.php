@@ -344,4 +344,52 @@ class Mt_Util
 		unset($p);
 		$p = NULL;
 	}
+	/**
+	 * 功能：十六进制颜色转RGB
+	 * 举例：$c = "#FF00D4"
+	 */
+	public static function hex2color($c){
+		$len = strlen($c);
+		if(!in_array($len,[4,7])) {
+			return false;
+		}
+		$color = str_replace('#', '', $c);
+		if ($len == 4) {
+			$r = hexdec(substr($color,0,1).substr($color,0,1));
+			$g = hexdec(substr($color,1,1).substr($color,1,1));
+			$b = hexdec(substr($color,2,1).substr($color,2,1));
+			return "R:".$r." G:".$g." B:".$b;
+		}
+		$r = hexdec(substr($color,0,2));
+		$g = hexdec(substr($color,2,2));
+		$b = hexdec(substr($color,4,2));
+		return "R:".$r." G:".$g." B:".$b;
+	}
+	/**
+	 * 功能：格式化文件单位
+	 */
+	public static function get_file_unit($file){
+		if (!file_exists($file)) {
+			return false;
+		}
+		$f_b = filesize($file);
+		//$f_b = '106020400';
+		$tmp = explode('.', $f_b);
+		$unit = 'b';
+		while(strlen(array_shift($tmp))>3) {
+			$f_b = $f_b/1024;
+			$tmp = explode('.', $f_b);
+			if ($unit=='b') {
+				$unit = 'kb';
+			} elseif ($unit == 'kb') {
+				$unit = 'm';
+			} elseif ($unit == 'm') {
+				$unit = 'gb';
+			} else {
+				$f_b = $f_b*1024;
+				break;
+			}
+		}
+		return $f_b.$unit;
+	}
 }
