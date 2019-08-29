@@ -1,6 +1,6 @@
 # mt_util_func.php
 个人日常工作学习中的php常用函数方法积累，欢迎大家补充。php交流Q群：294088839
-## 方法说明
+> ## 方法说明
 ### deep_diff_array($arr1, $arr2)
 * 功能：二维数组diff
 * 说明：找出数组$arr1中存在的value值，$arr2不存在的值value
@@ -77,6 +77,8 @@
 ### socket.php
 * 功能：工厂封装基类
 * 说明：使用方法Factory::getInstance('client')，获取客户端实例，服务端同
+
+> ## 常用函数说明
 
 ### 一:字符串处理
 | 函数名| 描述 | 
